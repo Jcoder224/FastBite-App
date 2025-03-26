@@ -5,8 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: process.env.HOST || 'localhost',  // Use 'localhost' for local, '0.0.0.0' for deployment
-    port: process.env.PORT || 5173,         // Default port 5173
-    strictPort: true,                        // Ensures the same port is used
+    host: '0.0.0.0',   // Allow external access
+    port: process.env.PORT || 5173,  // Use Render's assigned port
+    strictPort: true
+  },
+  preview: {
+    host: '0.0.0.0',   // Ensure preview mode also binds correctly
+    port: process.env.PORT || 5173
   }
 })
