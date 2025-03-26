@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "build": "vite build",
-    "start": "vite preview --host --port $PORT"
+    "start": "npx serve -s dist -l $PORT"
+    
   },
   "dependencies": {
     "react": "^19.0.0",
