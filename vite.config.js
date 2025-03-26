@@ -5,12 +5,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: '0.0.0.0',   // Allow external access
-    port: process.env.PORT || 5173,  // Use Render's assigned port
+    host: '0.0.0.0',
+    port: process.env.PORT || 5173,
     strictPort: true
   },
   preview: {
-    host: '0.0.0.0',   // Ensure preview mode also binds correctly
-    port: process.env.PORT || 5173
+    host: '0.0.0.0',
+    port: process.env.PORT || 5173,
+    allowedHosts: ['fastbite-app-1.onrender.com', '.onrender.com'] // ✅ Allow Render host
   }
 })
